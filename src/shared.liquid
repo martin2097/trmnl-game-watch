@@ -1,0 +1,47 @@
+{% template section_heading %}
+<div class="flex flex--row flex--between flex--center-y gap--small border--h-30 pb--2 w--full no-shrink">
+  <span class="title title--small lg:title--base text--bold">{{ heading | upcase | escape }}</span>
+  {% if year %}<span class="label label--small value--tnums no-shrink">{{ year }}</span>{% endif %}
+</div>
+{% endtemplate %}
+
+{% template ranking_row %}
+<div data-game-row="ranking" class="flex flex--col gap--none lg:gap--none lg:portrait:gap--none w--full grow {{ slot_class }}">
+<div class="flex flex--row flex--center-y gap--small w--full grow {{ row_class | default: 'py--1' }}">
+  <span class="label label--small w--4 no-shrink">{{ rank }}</span>
+  {% if featured and game.cover_url and game.cover_url != empty %}
+  <img class="image image-dither image--contain rounded--small h--auto no-shrink {{ image_class | default: 'w--28 lg:w--36 lg:portrait:w--24' }}" src="{{ game.cover_url | escape }}" alt="{{ game.title | escape }}">
+  {% endif %}
+  <span class="title title--small {{ title_class }} {% if featured %}text--bold{% endif %} grow w--min-0" data-clamp="{{ title_lines | default: 1 }}" data-clamp-lg="{{ large_title_lines | default: title_lines | default: 1 }}">{{ game.title | default: 'Untitled game' | escape }}</span>
+  <span class="value {{ score_class | default: 'value--xxsmall lg:value--xsmall' }} value--tnums no-shrink">{{ game.score_label | default: '—' | escape }}</span>
+</div>
+<div class="border--h-50 w--full no-shrink {{ divider_class }}"></div>
+</div>
+{% endtemplate %}
+
+{% template release_row %}
+<div data-game-row="release" class="flex flex--col gap--none lg:gap--none lg:portrait:gap--none w--full grow {{ slot_class }}">
+<div class="flex flex--row flex--center-y gap--small py--1 w--full grow">
+  <div class="flex flex--col flex--left gap--xsmall grow w--min-0">
+    <span class="title title--small {{ title_class }} w--full" data-clamp="2">{{ game.title | default: 'Untitled game' | escape }}</span>
+    <span class="label label--small value--tnums hidden portrait:block w--full">{{ game.date_label | default: 'TBA' | escape }}</span>
+  </div>
+  <span class="value value--xxsmall value--tnums w--6 text--right no-shrink">{{ game.score_label | default: '—' | escape }}</span>
+  <span class="label label--small value--tnums w--12 text--right no-shrink portrait:hidden">{{ game.date_label | default: 'TBA' | escape }}</span>
+</div>
+<div class="border--h-50 w--full no-shrink {{ divider_class }}"></div>
+</div>
+{% endtemplate %}
+
+{% template empty_state %}
+<div class="flex flex--col flex--center gap--small grow p--4 w--full"><span class="description text--center">{{ heading | default: 'No games available' | escape }}</span></div>
+{% endtemplate %}
+
+{% template plugin_footer %}
+<div class="title_bar">
+  <img class="image image-stroke" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iNzAgMjAwIDExMTUgODcwIj4KICA8dGl0bGU+R2FtZSBXYXRjaCBjb250cm9sbGVyPC90aXRsZT4KICA8cGF0aCBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNjcgMjkyQzI5NSAyOTIgMjQ0IDMyNCAyMDQgMzg0QzE1MSA0NjQgMTAxIDY2NyA4NiA3NzhDNzYgODUwIDEwMyA5MTkgMTYzIDk0OUMyMjYgOTgxIDI4MCA5NDcgMzI2IDg5Nkw0MDEgODA4QzQzNCA3NzEgNDc5IDc2NCA1NDUgNzY0SDcwNkM3NzIgNzY0IDgxNiA3NzEgODUwIDgwOEw5MjUgODk2Qzk3MSA5NDcgMTAyNSA5ODEgMTA4OCA5NDlDMTE0OCA5MTkgMTE3NSA4NTAgMTE2NSA3NzhDMTE1MCA2NjcgMTEwMCA0NjQgMTA0NyAzODRDMTAwNyAzMjQgOTU2IDI5MiA4ODQgMjkyQzgzMyAyOTIgODA4IDMwOSA3NjggMzI3QzcyOCAzNDUgNjgwIDM0OSA2MjYgMzQ5QzU3MiAzNDkgNTIzIDM0NSA0ODMgMzI3QzQ0MyAzMDkgNDE4IDI5MiAzNjcgMjkyWk0zNjcgNDMzQzM0MCA0MzMgMzI2IDQ0NiAzMjYgNDcxVjUxNlEzMjYgNTIzIDMxOCA1MjNIMjc1QzI0OCA1MjMgMjM1IDUzNyAyMzUgNTY3QzIzNSA1OTcgMjQ4IDYxMiAyNzUgNjEySDMxOFEzMjYgNjEyIDMyNiA2MjBWNjYwQzMyNiA2ODYgMzQxIDY5OCAzNzEgNjk4QzQwMiA2OTggNDE3IDY4NiA0MTcgNjYwVjYyMFE0MTcgNjEyIDQyNSA2MTJINDY4QzQ5NSA2MTIgNTA5IDU5NyA1MDkgNTY3QzUwOSA1MzcgNDk1IDUyMyA0NjggNTIzSDQyNVE0MTcgNTIzIDQxNyA1MTZWNDcxQzQxNyA0NDYgNDAyIDQzMyAzNjcgNDMzWk05MzQgNDY5QTQ3LjUgNDcuNSAwIDEgMCA4MzkgNDY5QTQ3LjUgNDcuNSAwIDEgMCA5MzQgNDY5Wk04MzkgNTY1QTQ3LjUgNDcuNSAwIDEgMCA3NDQgNTY1QTQ3LjUgNDcuNSAwIDEgMCA4MzkgNTY1Wk0xMDI4IDU2NUE0Ny41IDQ3LjUgMCAxIDAgOTMzIDU2NUE0Ny41IDQ3LjUgMCAxIDAgMTAyOCA1NjVaTTkzNCA2NTlBNDcuNSA0Ny41IDAgMSAwIDgzOSA2NTlBNDcuNSA0Ny41IDAgMSAwIDkzNCA2NTlaIi8+Cjwvc3ZnPgo=" alt="">
+  <span class="title">Game Watch</span>
+  <span class="instance">Ratings by OpenCritic{% if is_stale %} · Stale{% endif %}</span>
+</div>
+{% endtemplate %}
+

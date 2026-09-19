@@ -1,0 +1,26 @@
+<div class="layout layout--col gap--small p--4 lg:p--5" data-game-view="half_horizontal">
+{% render "section_heading" with heading: "Hall of Fame", year: year %}
+{% if hall and hall != empty %}<div class="grid lg:portrait:hidden grid--cols-2 gap--medium lg:gap--large w--full grow h--0 h--min-0"><div class="flex flex--col gap--distribute w--full h--full h--min-0 ">
+{% for game in hall offset: 0 limit: 5 %}
+{% assign rank = forloop.index | plus: 0 %}{% assign featured = false %}{% if rank == 1 %}{% assign featured = true %}{% endif %}
+{% assign slot = '' %}{% assign divider = '' %}{% if forloop.last %}{% assign slot = 'lg:grow-0 lg:h--12 lg:portrait:h--16' %}{% assign divider = 'hidden' %}{% endif %}
+{% render "ranking_row" with game: game, rank: rank, featured: featured, image_class: "hidden lg:block w--28 lg:portrait:w--24", row_class: "py--1", title_class: "lg:title--base", title_lines: 1, large_title_lines: 2, slot_class: slot, divider_class: divider %}
+{% endfor %}</div><div class="flex flex--col gap--distribute w--full h--full h--min-0 border--v-50 pl--4 lg:pl--5">
+{% for game in hall offset: 5 limit: 5 %}
+{% assign rank = forloop.index | plus: 5 %}{% assign featured = false %}{% if rank == 1 %}{% assign featured = true %}{% endif %}
+{% assign slot = '' %}{% assign divider = '' %}{% if forloop.last %}{% assign slot = 'lg:grow-0 lg:h--12 lg:portrait:h--16' %}{% assign divider = 'hidden' %}{% endif %}
+{% render "ranking_row" with game: game, rank: rank, featured: featured, image_class: "hidden lg:block w--28 lg:portrait:w--24", row_class: "py--1", title_class: "lg:title--base", title_lines: 1, large_title_lines: 2, slot_class: slot, divider_class: divider %}
+{% endfor %}</div></div><div class="hidden lg:portrait:grid grid--cols-2 gap--medium lg:gap--large w--full grow h--0 h--min-0"><div class="flex flex--col gap--distribute w--full h--full h--min-0 ">
+{% for game in hall offset: 0 limit: 6 %}
+{% assign rank = forloop.index | plus: 0 %}{% assign featured = false %}{% if rank == 1 %}{% assign featured = true %}{% endif %}
+{% assign slot = '' %}{% assign divider = '' %}{% if forloop.last %}{% assign slot = '' %}{% assign divider = 'hidden' %}{% endif %}
+{% render "ranking_row" with game: game, rank: rank, featured: featured, image_class: "hidden lg:block w--28 lg:portrait:w--24", row_class: "py--1", title_class: "lg:title--base", title_lines: 1, large_title_lines: 2, slot_class: slot, divider_class: divider %}
+{% endfor %}</div><div class="flex flex--col gap--distribute w--full h--full h--min-0 border--v-50 pl--4 lg:pl--5">
+{% for game in hall offset: 6 limit: 6 %}
+{% assign rank = forloop.index | plus: 6 %}{% assign featured = false %}{% if rank == 1 %}{% assign featured = true %}{% endif %}
+{% assign slot = '' %}{% assign divider = '' %}{% if forloop.last %}{% assign slot = '' %}{% assign divider = 'hidden' %}{% endif %}
+{% render "ranking_row" with game: game, rank: rank, featured: featured, image_class: "hidden lg:block w--28 lg:portrait:w--24", row_class: "py--1", title_class: "lg:title--base", title_lines: 1, large_title_lines: 2, slot_class: slot, divider_class: divider %}
+{% endfor %}</div></div>{% else %}{% render "empty_state" %}{% endif %}
+</div>
+{% render "plugin_footer" with platform: platform_label, is_stale: stale %}
+
