@@ -1,0 +1,60 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: '{"year":2026,"platform_label":"PlayStation 5 + Xbox Series X/S + Nintendo Switch 2 + Nintendo Switch + PC","updated_at":"2026-09-19T10:54:05.712Z","stale":true,"hall":[{"id":21335,"title":"The Extremely Long Game Title: Definitive Complete Anniversary Adventure Edition","score":91.52380952380952,"score_label":"92","date_label":"Sep 17","release_date":"2026-09-17T00:00:00.000Z","cover_url":null,"banner_url":"https://img.opencritic.com/game/21335/o/eaeQTSdK.jpg","platforms":["ps5","switch2","switch","pc"],"platform_dates":{"ps5":"2026-09-17T00:00:00.000Z","switch2":"2026-09-17T00:00:00.000Z","switch":"2026-09-17T00:00:00.000Z","pc":"2026-09-17T00:00:00.000Z"}},{"id":19213,"title":"Mina the Hollower","score":91.09848484848484,"score_label":"91","date_label":"May 29","release_date":"2026-05-29T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/19213/o/oTooofFP.jpg","banner_url":"https://img.opencritic.com/game/19213/o/oTooofFP.jpg","platforms":["pc","switch","ps5","xbxs","switch2"],"platform_dates":{"pc":"2026-05-29T00:00:00.000Z","switch":"2026-05-29T00:00:00.000Z","ps5":"2026-05-29T00:00:00.000Z","xbxs":"2026-05-29T00:00:00.000Z","switch2":"2026-05-29T00:00:00.000Z"}},{"id":19996,"title":"Forza Horizon 6","score":90.76704545454545,"score_label":"91","date_label":"May 19","release_date":"2026-05-19T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/19996/o/QfxgGAeI.jpg","banner_url":"https://img.opencritic.com/game/19996/o/QfxgGAeI.jpg","platforms":["pc","xbxs"],"platform_dates":{"pc":"2026-05-19T00:00:00.000Z","xbxs":"2026-05-19T00:00:00.000Z"}},{"id":20596,"title":"Schrödinger''s Call","score":90.1875,"score_label":"90","date_label":"May 27","release_date":"2026-05-27T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/20596/o/bS1ovbOq.jpg","banner_url":"https://img.opencritic.com/game/20596/o/bS1ovbOq.jpg","platforms":["pc"],"platform_dates":{"pc":"2026-05-27T00:00:00.000Z"}},{"id":19984,"title":"Lost and Found Co.","score":90,"score_label":"90","date_label":"Mar 6","release_date":"2026-03-06T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/19984/o/0XJI13RL.jpg","banner_url":"https://img.opencritic.com/game/19984/o/0XJI13RL.jpg","platforms":["pc"],"platform_dates":{"pc":"2026-03-06T00:00:00.000Z"}},{"id":19667,"title":"Pokémon Pokopia","score":89.37735849056604,"score_label":"89","date_label":"Mar 5","release_date":"2026-03-05T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/19667/o/9BjNO2ep.jpg","banner_url":"https://img.opencritic.com/game/19667/o/9BjNO2ep.jpg","platforms":["switch2"],"platform_dates":{"switch2":"2026-03-05T00:00:00.000Z"}},{"id":20819,"title":"Fire Emblem: Fortune''s Weave","score":89.33333333333333,"score_label":"89","date_label":"Sep 17","release_date":"2026-09-17T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/20819/o/YeQuUU3n.jpg","banner_url":"https://img.opencritic.com/game/20819/o/YeQuUU3n.jpg","platforms":["switch2"],"platform_dates":{"switch2":"2026-09-17T00:00:00.000Z"}},{"id":18716,"title":"Resident Evil Requiem","score":89.18877551020408,"score_label":"89","date_label":"Feb 27","release_date":"2026-02-27T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/18716/o/tJbFewuj.jpg","banner_url":"https://img.opencritic.com/game/18716/o/tJbFewuj.jpg","platforms":["pc","ps5","xbxs","switch2"],"platform_dates":{"pc":"2026-02-27T00:00:00.000Z","ps5":"2026-02-27T00:00:00.000Z","xbxs":"2026-02-27T00:00:00.000Z","switch2":"2026-02-27T00:00:00.000Z"}},{"id":12081,"title":"Valheim","score":89,"score_label":"89","date_label":"Sep 9","release_date":"2026-09-09T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/12081/o/kwrIA3Vc.jpg","banner_url":"https://img.opencritic.com/game/12081/o/kwrIA3Vc.jpg","platforms":["pc","xbxs","switch2"],"platform_dates":{"pc":"2026-09-09T00:00:00.000Z","xbxs":"2026-09-09T00:00:00.000Z","switch2":"2026-09-09T00:00:00.000Z"}},{"id":20779,"title":"Elden Ring: Tarnished Edition","score":88.88888888888889,"score_label":"89","date_label":"Aug 28","release_date":"2026-08-28T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/20779/o/v8skKC1y.jpg","banner_url":"https://img.opencritic.com/game/20779/o/v8skKC1y.jpg","platforms":["switch2"],"platform_dates":{"switch2":"2026-08-28T00:00:00.000Z"}},{"id":20039,"title":"Hermit and Pig","score":88.75,"score_label":"89","date_label":"Feb 5","release_date":"2026-02-05T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/20039/o/7t7snQlg.jpg","banner_url":"https://img.opencritic.com/game/20039/o/7t7snQlg.jpg","platforms":["pc"],"platform_dates":{"pc":"2026-02-05T00:00:00.000Z"}},{"id":21039,"title":"Desktop Explorer","score":88.75,"score_label":"89","date_label":"Jul 17","release_date":"2026-07-17T00:00:00.000Z","cover_url":"https://img.opencritic.com/game/21039/o/dmt2J2SC.jpg","banner_url":"https://img.opencritic.com/game/21039/o/dmt2J2SC.jpg","platforms":["pc"],"platform_dates":{"pc":"2026-07-17T00:00:00.000Z"}}],"recent":[],"upcoming":[],"status":"ok","message":"No matching releases in this selection."}'
+polling_verb: get
+framework_version: 3.3.2
+serverless_language: ''
+polling_url: 'https://game-ratings-api.slowtech.workers.dev/feed?platforms={{ platforms | join: '','' | url_encode }}'
+polling_headers: ''
+polling_body: ''
+id: 482654
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+oauth_authorize_url: ''
+oauth_token_url: ''
+oauth_scopes: ''
+oauth_scope_separator: ''
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
+oauth_token_site: ''
+oauth_token_params: ''
+oauth_token_request_auth_method: ''
+oauth_body_format: ''
+oauth_token_response_metadata: ''
+oauth_authorization_method: ''
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: ''
+oauth_fixed_expiry_ms: ''
+custom_fields:
+- keyname: platforms
+  field_type: select
+  name: Platforms (optional)
+  description: See games for the selected platforms you play on. Leave blank to include all platforms.
+  help_text: Choose one or more platforms. Hold <kbd>Ctrl</kbd> on Windows or <kbd>Command</kbd> on Mac while clicking to add or remove individual choices. Games available on any of your selected platforms are included.
+  optional: true
+  multiple: true
+  options:
+  - PlayStation 5: ps5
+  - Xbox Series X/S: xbxs
+  - Nintendo Switch 2: switch2
+  - Nintendo Switch: switch
+  - PC: pc
+- keyname: about
+  name: About This Plugin
+  category: custom
+  field_type: author_bio
+  description: |
+    Finished a game and wondering what to play next? Keep this year’s best-rated games, fresh releases, and upcoming titles in sight, without keeping another browser tab open. Ratings come from OpenCritic, which brings together reviews from game critics. Find something you missed or see what’s arriving soon.
+    <br/><br/>
+    You can choose the platforms, or leave the selection blank. Save the plugin and you’re ready for your next good game.
+  github_url: https://github.com/martin2097
+  learn_more_url: https://www.rapavy.cz/
+  email_address: rapavy.mato@gmail.com
+name: Game Watch | Ratings & Releases
+description: The year's best, rated by OpenCriti
+refresh_interval: 360
