@@ -46,7 +46,7 @@ custom_fields:
   - PC: pc
 - keyname: about
   name: About This Plugin
-  category: custom
+  category: games,entertainment
   field_type: author_bio
   description: |
     Finished a game and wondering what to play next? Keep this year’s best-rated games, fresh releases, and upcoming titles in sight, without keeping another browser tab open. Ratings come from OpenCritic, which brings together reviews from game critics. Find something you missed or see what’s arriving soon.
