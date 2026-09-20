@@ -1,21 +1,21 @@
 {% template section_heading %}
-<div class="flex flex--row flex--between flex--center-y gap--small border--h-30 pb--2 w--full no-shrink">
+<div class="flex flex--row flex--between flex--center-y gap--small border--h-black pb--2 w--full no-shrink">
   <span class="title title--small lg:title--base text--bold">{{ heading | upcase | escape }}</span>
-  {% if year %}<span class="label label--small value--tnums no-shrink">{{ year }}</span>{% endif %}
+  {% if year %}<span class="label label--small value--tnums text--regular lg:text--gray-30 no-shrink">{{ year }}</span>{% endif %}
 </div>
 {% endtemplate %}
 
 {% template ranking_row %}
 <div data-game-row="ranking" class="flex flex--col gap--none lg:gap--none lg:portrait:gap--none w--full grow {{ slot_class }}">
 <div class="flex flex--row flex--center-y gap--small w--full grow {{ row_class | default: 'py--1' }}">
-  <span class="label label--small w--4 no-shrink">{{ rank }}</span>
+  <span class="label label--small w--4 no-shrink {% if rank == 1 %}text--bold{% else %}text--regular lg:text--gray-30{% endif %}">{{ rank }}</span>
   {% if featured and game.cover_url and game.cover_url != empty %}
   <img class="image image-dither image--contain rounded--small h--auto no-shrink {{ image_class | default: 'w--28 lg:w--36 lg:portrait:w--24' }}" src="{{ game.cover_url | escape }}" alt="{{ game.title | escape }}">
   {% endif %}
-  <span class="title title--small {{ title_class }} {% if featured %}text--bold{% endif %} grow w--min-0" data-clamp="{{ title_lines | default: 1 }}" data-clamp-lg="{{ large_title_lines | default: title_lines | default: 1 }}">{{ game.title | default: 'Untitled game' | escape }}</span>
-  <span class="value {{ score_class | default: 'value--xxsmall lg:value--xsmall' }} value--tnums no-shrink">{{ game.score_label | default: '—' | escape }}</span>
+  <span class="title title--small {{ title_class }} {% if featured or rank == 1 %}text--bold{% else %}text--regular{% endif %} grow w--min-0" data-clamp="{{ title_lines | default: 1 }}" data-clamp-lg="{{ large_title_lines | default: title_lines | default: 1 }}">{{ game.title | default: 'Untitled game' | escape }}</span>
+  <span class="value {{ score_class | default: 'value--xxsmall lg:value--xsmall' }} value--tnums text--bold no-shrink">{{ game.score_label | default: '—' | escape }}</span>
 </div>
-<div class="border--h-50 w--full no-shrink {{ divider_class }}"></div>
+<div class="border--h-60 w--full no-shrink {{ divider_class }}"></div>
 </div>
 {% endtemplate %}
 
@@ -23,13 +23,13 @@
 <div data-game-row="release" class="flex flex--col gap--none lg:gap--none lg:portrait:gap--none w--full grow {{ slot_class }}">
 <div class="flex flex--row flex--center-y gap--small py--1 w--full grow">
   <div class="flex flex--col flex--left gap--xsmall grow w--min-0">
-    <span class="title title--small {{ title_class }} w--full" data-clamp="2">{{ game.title | default: 'Untitled game' | escape }}</span>
-    <span class="label label--small value--tnums hidden portrait:block w--full">{{ game.date_label | default: 'TBA' | escape }}</span>
+    <span class="title title--small {{ title_class }} text--regular w--full" data-clamp="2">{{ game.title | default: 'Untitled game' | escape }}</span>
+    <span class="label label--small value--tnums text--regular lg:text--gray-30 hidden portrait:block w--full">{{ game.date_label | default: 'TBA' | escape }}</span>
   </div>
-  <span class="value value--xxsmall value--tnums w--6 text--right no-shrink">{{ game.score_label | default: '—' | escape }}</span>
-  <span class="label label--small value--tnums w--12 text--right no-shrink portrait:hidden">{{ game.date_label | default: 'TBA' | escape }}</span>
+  <span class="value value--xxsmall value--tnums {% if game.score_label == "—" %}text--regular lg:text--gray-30{% else %}text--bold{% endif %} w--6 text--right no-shrink">{{ game.score_label | default: '—' | escape }}</span>
+  <span class="label label--small value--tnums text--regular lg:text--gray-30 w--12 text--right no-shrink portrait:hidden">{{ game.date_label | default: 'TBA' | escape }}</span>
 </div>
-<div class="border--h-50 w--full no-shrink {{ divider_class }}"></div>
+<div class="border--h-60 w--full no-shrink {{ divider_class }}"></div>
 </div>
 {% endtemplate %}
 

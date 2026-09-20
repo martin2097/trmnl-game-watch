@@ -7,7 +7,7 @@
 {% if forloop.last %}{% assign slot = slot | append: ' lg:grow-0 lg:h--10' %}{% assign divider = 'hidden' %}
 {% elsif forloop.index == 5 %}{% assign slot = slot | append: ' lg:grow lg:h--auto' %}{% assign divider = 'hidden lg:block' %}
 {% elsif forloop.index == 8 %}{% assign slot = slot | append: ' lg:grow-0 lg:h--10 lg:portrait:grow lg:portrait:h--auto' %}{% assign divider = 'lg:hidden lg:portrait:block' %}{% endif %}
-{% render "ranking_row" with game: game, rank: forloop.index, row_class: "py--1", score_class: "value--xxsmall", title_lines: 1, slot_class: slot, divider_class: divider %}
+{% render "ranking_row" with game: game, rank: forloop.index, row_class: "py--1", score_class: "value--xxsmall lg:value--xsmall lg:portrait:value--xxsmall", title_class: "lg:title--base lg:portrait:title--small", title_lines: 1, slot_class: slot, divider_class: divider %}
 {% else %}{% render "empty_state" %}{% endfor %}
 </div>
 </div>
