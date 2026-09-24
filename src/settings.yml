@@ -6,6 +6,7 @@ static_data: '{"year":2026,"platform_label":"PlayStation 5 + Xbox Series X/S + N
 polling_verb: get
 framework_version: 3.3.2
 serverless_language: ''
+refresh_interval_floor: ''
 polling_url: 'https://game-ratings-api.slowtech.workers.dev/feed?platforms={{ platforms | join: '','' | url_encode }}'
 polling_headers: ''
 polling_body: ''
@@ -56,5 +57,5 @@ custom_fields:
   learn_more_url: https://www.rapavy.cz/
   email_address: rapavy.mato@gmail.com
 name: Game Watch | Ratings & Releases
-description: The year's best, rated by OpenCriti
+description: Year's best, rated by OpenCritic
 refresh_interval: 360
