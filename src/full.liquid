@@ -13,28 +13,31 @@
 {% render "ranking_row" with game: game, rank: forloop.index, featured: featured, score_class: score_class, title_class: "lg:title--base", title_lines: 2, slot_class: slot, divider_class: divider, image_class: "w--28 lg:w--36 lg:portrait:w--24" %}
 {% else %}{% render "empty_state" %}{% endfor %}
 </div></div>
-<div class="flex flex--col gap--medium lg:gap--large border--v-60 pl--4 lg:pl--5 w--full h--full h--min-0">
-<div class="flex flex--col gap--small w--full grow h--0 h--min-0">
+{% assign upcoming_x = upcoming.size | default: 0 | at_most: 6 %}
+{% assign upcoming_og = upcoming_x | at_most: 5 %}
+{% assign recent_x = 12 | minus: upcoming_x | at_most: recent.size %}
+{% assign recent_og = 9 | minus: upcoming_og | at_most: recent_x %}
+<div class="flex flex--col flex--top gap--none border--v-60 pl--4 lg:pl--5 w--full h--full h--min-0">
+<div class="w--full no-shrink lg:mb--2">
 {% render "section_heading" with heading: "Just released" %}
-<div class="flex flex--col gap--distribute w--full grow h--0 h--min-0">
-{% for game in recent limit: 6 %}
-{% assign slot = '' %}{% assign divider = '' %}
-{% if forloop.index > 5 %}{% assign slot = 'hidden lg:flex' %}{% endif %}
-{% if forloop.last %}{% assign slot = slot | append: ' lg:grow-0 lg:h--12 lg:portrait:h--16' %}{% assign divider = 'hidden' %}
-{% elsif forloop.index == 5 %}{% assign slot = 'lg:grow lg:h--auto' %}{% assign divider = 'hidden lg:block' %}{% endif %}
+</div>
+{% for game in recent limit: recent_x %}
+{% assign slot = 'grow-0 h--10 lg:h--12 lg:portrait:h--16' %}{% assign divider = '' %}
+{% if forloop.index > recent_og %}{% assign slot = slot | append: ' hidden lg:flex' %}{% endif %}
+{% if forloop.last %}{% assign divider = 'hidden' %}
+{% elsif forloop.index == recent_og %}{% assign divider = 'hidden lg:block' %}{% endif %}
 {% render "release_row" with game: game, slot_class: slot, divider_class: divider %}
 {% else %}{% render "empty_state" %}{% endfor %}
-</div></div><div class="flex flex--col gap--small w--full grow h--0 h--min-0">
+<div class="w--full no-shrink mt--1 lg:mt--6 lg:mb--2">
 {% render "section_heading" with heading: "Coming next" %}
-<div class="flex flex--col gap--distribute w--full grow h--0 h--min-0">
-{% for game in upcoming limit: 6 %}
-{% assign slot = '' %}{% assign divider = '' %}
-{% if forloop.index > 5 %}{% assign slot = 'hidden lg:flex' %}{% endif %}
-{% if forloop.last %}{% assign slot = slot | append: ' lg:grow-0 lg:h--12 lg:portrait:h--16' %}{% assign divider = 'hidden' %}
-{% elsif forloop.index == 5 %}{% assign slot = 'lg:grow lg:h--auto' %}{% assign divider = 'hidden lg:block' %}{% endif %}
+</div>
+{% for game in upcoming limit: upcoming_x %}
+{% assign slot = 'grow-0 h--10 lg:h--12 lg:portrait:h--16' %}{% assign divider = '' %}
+{% if forloop.index > upcoming_og %}{% assign slot = slot | append: ' hidden lg:flex' %}{% endif %}
+{% if forloop.last %}{% assign divider = 'hidden' %}
+{% elsif forloop.index == upcoming_og %}{% assign divider = 'hidden lg:block' %}{% endif %}
 {% render "release_row" with game: game, slot_class: slot, divider_class: divider %}
 {% else %}{% render "empty_state" %}{% endfor %}
-</div></div>
 </div></div>
 </div>
 {% render "plugin_footer" with platform: platform_label, is_stale: stale %}
